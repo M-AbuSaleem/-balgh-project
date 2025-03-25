@@ -2,95 +2,59 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>balgh </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balgh</title>
+    <link rel="icon" href="image/icon.png">
+
     <link rel="stylesheet" href="style main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
     <div class="header">
+        <div class="auth-buttons">
+            <a href="registration page.html" class="signup-btn">إنشاء حساب</a>
+            <a href="log page.html" class="login-btn">تسجيل الدخول</a>
+        </div>
+
+        
 
 
-        <div class="nav">
-            <div class="auth-buttons">
-                <a href="log page.html" class="login-btn">تسجيل الدخول</a>
-                <a href="registration page.html" class="signup-btn">إنشاء حساب</a>
+
+            <nav class="nav">
+
+
+
+
+
+
+                <a href="log page.html" class="nav-link">اتصل بنا</a>
+                <a href="log page.html" class="nav-link">من نحن</a>
+
+                <a href="log page.html" class="nav-link">الخدمات</a>
+
+                <a href="log page.html" class="nav-link">الرئيسية</a>
+<div class="left-section">
+            <div class="logo-container">
+
+
+                <a href="index.html" title="balgh">
+                    <img src="image/image.png" class="logo-d" alt="Logo">
+                </a>
+
+
             </div>
-            
-            <span class="nav1">
-                <a href="#section1"  class="nav3">الرئيسية </a>
-                <a href="#section3" class="nav-b" >الخدمات</a>
-                <a href="#section2" class="nav-c"> من نحن </a>
-                <a href="#section4" class="nav-a"> اتصل بنا</a>
-        </span>
-                      <div class="logo">
-
-            <a href="index.html" title=" balgh"><img src="image/image.png"  class="logo-d" height="80px"width="80px" alt=""></a>
-                      </div>
-            
+            </nav>
         </div>
     </div>
 
-    <div class="image-slider">
-        <div class="slider-images">
-          <p alt="Image 6"style="height: 930px;"width="100%"c ></p>></p>
 
-            <img src="mm.jpg" alt="Image 6"style="height: 930px;"width="100%">
-            <img src="2.jpg" alt="Image 2"style="height: 930px;"width="100%">
-          <img src="1.jpg" alt="Image 1" style="height: 930px;"width="100%">
-          <img src="3.jpg" alt="Image 3"style="height: 930px;"width="100%">
-          <img src="5.jpg" alt="Image 5"style="height: 930px;"width="100%">
-          <img src="4.jpg" alt="Image 4"style="height: 930px;"width="100%">
-        </div>
-        <button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
-      </div>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
-      <p>fsff</p>
+    <video class="video"  autoplay loop muted>
+        <source src="image/baleghv.mp4" type="video/mp4">
+    </video>
 
-    <!-- <div class="logo-section-wrapper">
-     
-    </div> -->
-
+    
     <button id="scrollTopBtn">↑</button>
 
     <div class="footer">جميع الحقوق محفوظة  &copy; 2025</div>
@@ -122,19 +86,19 @@
 
 
 
-        let currentIndex = 0; // تحديد الصورة الحالية
+        let currentIndex = 0; 
 const images = document.querySelectorAll('.slider-images img');
 const totalImages = images.length;
 
 function showImage(index) {
   const slider = document.querySelector('.slider-images');
-  const newTransformValue = -index * 100; // إزاحة الصور لتكون واحدة فقط مرئية في كل مرة
-  slider.style.transform = `translateX(${newTransformValue}%)`; // إزاحة الصور في الـ X لتغيير الصورة
+  const newTransformValue = -index * 100; 
+  slider.style.transform = `translateX(${newTransformValue}%)`;
 }
 
 document.querySelector('.prev').addEventListener('click', function() {
   if (currentIndex === 0) {
-    currentIndex = totalImages - 1; // العودة للصورة الأخيرة
+    currentIndex = totalImages - 1; 
   } else {
     currentIndex--;
   }
@@ -143,7 +107,7 @@ document.querySelector('.prev').addEventListener('click', function() {
 
 document.querySelector('.next').addEventListener('click', function() {
   if (currentIndex === totalImages - 1) {
-    currentIndex = 0; // العودة لأول صورة
+    currentIndex = 0;
   } else {
     currentIndex++;
   }
@@ -151,6 +115,18 @@ document.querySelector('.next').addEventListener('click', function() {
 });
 
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
