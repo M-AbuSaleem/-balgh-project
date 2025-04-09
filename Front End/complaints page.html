@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>صفحه الشكاوي</title>
+  <link rel="icon" href="image/icon.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <link rel="stylesheet" href="style comp.css">
+
+  <style>
+   mahmoudnnsdsdi
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="auth-buttons">
+            <a href="index.html" class="signup-btn">تسجيل الخروج</a>
+        </div>
+        <nav class="nav">
+          <div class="logo-container">
+                    <a href="home page.html" title="balgh">
+                        <img src="image/logo.png" class="logo-d" alt="Logo">                    </a>
+
+                </div>
+            <a href="contact page.html" class="nav-link"> اتصل بنا</a>
+            <a href="track page.html" class="nav-link"> تتبع الشكوى</a>
+            <a href="history page.html" class="nav-link">سجل الشكاوي</a>
+            <a href="complaints page.html" class="nav-link">الشكاوي</a>
+            <a href="home page.html" class="nav-link">الرئيسية</a>
+            <div class="left-section">
+                
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero">
+      مرحباً بك في صفحة تقديم الشكاوى
+    </div>
+
+    <div class="container2">
+      <div class="section-title">لماذا نرحب بشكاويك؟</div>
+      <p class="info-text">
+        تهدف هذه المنصة إلى تحسين جودة الخدمات المقدمة للمواطنين عبر الاستماع إلى ملاحظاتهم وشكاويهم. يمكنك من خلال هذه الصفحة التبليغ عن أي خلل في الطرق، المياه، أو الكهرباء، ومتابعة حالته حتى يتم معالجته.
+      </p>
+  <!-- دائرة الأزرار -->
+  <div id="circle-container" style="text-align:center; margin:40px auto;">
+    <div id="circle">
+        <button class="circle-button top" onclick="openModal('الطرق')">مشكلة في الطريق</button>
+        <button class="circle-button right" onclick="openModal('الكهرباء')">مشكلة كهرباء</button>
+        <button class="circle-button bottom" onclick="openModal('المياه')">مشكلة مياه</button>
+        <button class="circle-button left" onclick="openModal('أخرى')">أخرى</button>
+  </div>
+</div>
+
+  <!-- نموذج الشكوى -->
+  <div class="modal" id="complaintModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">✖</button>
+      <h2>نموذج الشكوى</h2>
+
+      <div class="form-group">
+        <label class="form-label">القطاع:</label>
+        <input type="text" id="sectorField" readonly />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">الاسم:</label>
+        <input type="text" id="name" placeholder="الاسم الكامل" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">رقم الهاتف:</label>
+        <input type="number" placeholder="رقم الهاتف" />
+      </div>
+
+      <input type="hidden" id="dateField" />
+
+      <div class="form-group">
+        <label class="form-label">الشكوى:</label>
+        <textarea id="complaint" rows="4" placeholder="اكتب شكواك هنا..."></textarea>
+      </div>
+
+      <div class="file-input-container">
+        <label for="file-upload" class="file-input-label">📤 إرفاق صورة</label>
+        <input id="file-upload" type="file" accept="image/*" class="file-input" />
+        <div id="file-name-display" class="file-name">لم يتم اختيار أي ملف</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">الموقع الأولي:</label>
+        <input type="text" placeholder="الموقع الأولي" />
+      </div>
+
+      <div id="map"></div>
+
+      <input type="hidden" id="latitude" />
+      <input type="hidden" id="longitude" />
+
+      <button class="submit" onclick="submitForm(event)">إرسال</button>
+    </div>
+  </div>
+
+  <div class="slider">
+    <img src="image/logo.png" alt="Slider Image">
+    <img src="image/logo.png" alt="Slider Image">
+    <img src="image/logo.png" alt="Slider Image">
+  </div>
+    </div>
+  <button id="scrollTopBtn">↑</button>
+
+  <div class="footer">جميع الحقوق محفوظة  &copy; 2025</div>
+
+  <!-- Leaflet Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <script>
+    let map, marker;
+
+    function getDayName(date) {
+      const days = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+      return days[date.getDay()];
+    }
+
+    function setCurrentDate() {
+      const today = new Date();
+      const dayName = getDayName(today);
+      const dateString = today.toISOString().split('T')[0];
+      document.getElementById('dateField').value = `${dayName}، ${dateString}`;
+    }
+
+    function openModal(sector) {
+      document.getElementById('sectorField').value = `قطاع ${sector}`;
+      document.getElementById('complaintModal').style.display = 'flex';
+      setCurrentDate();
+      setTimeout(() => map.invalidateSize(), 300);
+    }
+
+    function closeModal() {
+      document.getElementById('complaintModal').style.display = 'none';
+    }
+
+    document.getElementById('file-upload').addEventListener('change', function (e) {
+      const fileName = e.target.files[0] ? e.target.files[0].name : 'لم يتم اختيار أي ملف';
+      document.getElementById('file-name-display').textContent = fileName;
+    });
+
+    function initMap() {
+      map = L.map('map').setView([31.963158, 35.930359], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+      marker = L.marker(map.getCenter(), { draggable: true }).addTo(map);
+      updateHiddenFields(marker.getLatLng());
+
+      marker.on('dragend', () => updateHiddenFields(marker.getLatLng()));
+      map.on('click', (e) => {
+        marker.setLatLng(e.latlng);
+        updateHiddenFields(e.latlng);
+      });
+
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((pos) => {
+          const coords = [pos.coords.latitude, pos.coords.longitude];
+          map.setView(coords, 15);
+          marker.setLatLng(coords);
+          updateHiddenFields(marker.getLatLng());
+        });
+      }
+
+      L.Control.geocoder({ defaultMarkGeocode: false })
+        .on('markgeocode', function (e) {
+          const center = e.geocode.center;
+          map.setView(center, 15);
+          marker.setLatLng(center);
+          updateHiddenFields(center);
+        }).addTo(map);
+    }
+
+    function updateHiddenFields(latlng) {
+      document.getElementById('latitude').value = latlng.lat;
+      document.getElementById('longitude').value = latlng.lng;
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const complaint = document.getElementById('complaint').value;
+      const date = document.getElementById('dateField').value;
+      const lat = document.getElementById('latitude').value;
+      const lng = document.getElementById('longitude').value;
+
+      alert(`تم إرسال الشكوى:\nالاسم: ${name}\nالشكوى: ${complaint}\nالتاريخ: ${date}\nالموقع: ${lat}, ${lng}`);
+    }
+
+    window.onload = initMap;
+
+
+
+
+    window.addEventListener("scroll", function() {
+        let header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+          header.style.background = "#555"; 
+        } else {
+          header.style.background = "linear-gradient(to bottom, #20B2AA, #66CDAA)"; 
+        }
+      });
+
+      let scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+
+      scrollTopBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
