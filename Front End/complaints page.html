@@ -136,6 +136,45 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
   <script>
+
+
+
+
+const accountIcon = document.getElementById('accountIcon');
+    const accountDropdown = document.getElementById('accountDropdown');
+
+    accountIcon.addEventListener('click', () => {
+      accountDropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!accountIcon.contains(e.target) && !accountDropdown.contains(e.target)) {
+        accountDropdown.classList.remove('show');
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let map, marker;
 
     function getDayName(date) {
