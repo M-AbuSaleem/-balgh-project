@@ -11,14 +11,38 @@
 
 </head>
 <body>
-  <div class="background"></div>
 
     <div class="header">
         <div class="auth-buttons">
-            <a href="index.html" class="signup-btn">تسجيل الخروج</a>
+            <!-- <a href="index.html" class="signup-btn">تسجيل الخروج</a> -->
+
+       <header class="header2">
+    <div class="account-container" id="accountContainer">
+      <img src="image/3.png" alt="صورة الحساب" class="account-icon" id="accountIcon">
+      <div class="account-dropdown" id="accountDropdown">
+        <div class="arrow-up"></div>
+        <div class="account-info">
+          <p><strong>👤 الاسم:</strong> سامر السبعاوي</p>
+          <p><strong>📧 البريد:</strong> abusaleemm2003@gmail.com</p>
+        </div>
+        <div class="account-actions">
+          <button onclick="location.href='index.html'">
+            <i class="fas fa-user-edit"></i> تعديل الحساب
+          </button>
+          <button onclick="location.href='index.html'">
+            <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
         </div>
 
-        
+ 
 
 
 
@@ -150,6 +174,37 @@
 <div class="footer">جميع الحقوق محفوظة  &copy; 2025</div>
 
 <script>
+
+
+
+const accountIcon = document.getElementById('accountIcon');
+    const accountDropdown = document.getElementById('accountDropdown');
+
+    accountIcon.addEventListener('click', () => {
+      accountDropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!accountIcon.contains(e.target) && !accountDropdown.contains(e.target)) {
+        accountDropdown.classList.remove('show');
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     window.addEventListener("scroll", function() {
 let header = document.querySelector(".header");
 
