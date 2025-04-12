@@ -4,150 +4,157 @@
   <meta charset="UTF-8" />
   <title>صفحه الشكاوي</title>
   <link rel="icon" href="image/icon.png">
+  <!-- استيراد مكتبات Leaflet للخريطة -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <!-- ملف التنسيقات الخارجي -->
   <link rel="stylesheet" href="style comp.css">
+  <!-- خط Cairo للغة العربية -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
-
-
-  <style>
-   
-  </style>
 </head>
 <body>
 
-
+  <!-- رأس الصفحة ويحتوي على قائمة الحساب -->
   <div class="header">
     <div class="auth-buttons">
-        <!-- <a href="index.html" class="signup-btn">تسجيل الخروج</a> -->
-
-   <header class="header2">
-<div class="account-container" id="accountContainer">
-  <img src="image/3.png" alt="صورة الحساب" class="account-icon" id="accountIcon">
-  <div class="account-dropdown" id="accountDropdown">
-    <div class="arrow-up"></div>
-    <div class="account-info">
-      <p><strong>👤 الاسم:</strong> سامر السبعاوي</p>
-      <p><strong>📧 البريد:</strong> abusaleemm2003@gmail.com</p>
-    </div>
-    <div class="account-actions">
-      <button onclick="location.href='index.html'">
-        <i class="fas fa-user-edit"></i> تعديل الحساب
-      </button>
-      <button onclick="location.href='index.html'">
-        <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
-      </button>
-    </div>
-  </div>
-</div>
-</header>
-
-
-
-
-    </div>
-        <nav class="nav">
-          <div class="logo-container">
-                    <a href="home page.html" title="balgh">
-                        <img src="image/logo.png" class="logo-d" alt="Logo">                    </a>
-
-                </div>    
-                            <a href="home page.html" class="nav-link">الرئيسية</a>
-                <a href="complaints page.html" class="nav-link">الشكاوي</a>
-                <a href="history page.html" class="nav-link">سجل الشكاوي</a>
-                <a href="track page.html" class="nav-link"> تتبع الشكوى</a>
-
-                <a href="contact page.html" class="nav-link"> اتصل بنا</a>
-            <div class="left-section">
-                
+      <!-- قائمة الحساب المنسدلة -->
+      <header class="header2">
+        <div class="account-container" id="accountContainer">
+          <img src="image/3.png" alt="صورة الحساب" class="account-icon" id="accountIcon">
+          <div class="account-dropdown" id="accountDropdown">
+            <div class="arrow-up"></div>
+            <div class="account-info">
+              <p><strong>👤 الاسم:</strong> سامر السبعاوي</p>
+              <p><strong>📧 البريد:</strong> abusaleemm2003@gmail.com</p>
             </div>
-        </nav>
+            <div class="account-actions">
+              <button onclick="location.href='index.html'">
+                <i class="fas fa-user-edit"></i> تعديل الحساب
+              </button>
+              <button onclick="location.href='index.html'">
+                <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
     </div>
 
-    <div class="hero">
-      مرحباً بك في صفحة تقديم الشكاوى
-    </div>
+    <!-- شريط التنقل الرئيسي -->
+    <nav class="nav">
+      <div class="logo-container">
+        <a href="home page.html" title="balgh">
+          <img src="image/logo.png" class="logo-d" alt="Logo">
+        </a>
+      </div>    
+      <!-- روابط التنقل -->
+      <a href="home page.html" class="nav-link">الرئيسية</a>
+      <a href="complaints page.html" class="nav-link">الشكاوي</a>
+      <a href="history page.html" class="nav-link">سجل الشكاوي</a>
+      <a href="track page.html" class="nav-link"> تتبع الشكوى</a>
+      <a href="contact page.html" class="nav-link"> اتصل بنا</a>
+    </nav>
+  </div>
 
-    <div class="container2">
-      <div class="section-title">لماذا نرحب بشكاويك؟</div>
-      <p class="info-text">
-        تهدف هذه المنصة إلى تحسين جودة الخدمات المقدمة للمواطنين عبر الاستماع إلى ملاحظاتهم وشكاويهم. يمكنك من خلال هذه الصفحة التبليغ عن أي خلل في الطرق، المياه، أو الكهرباء، ومتابعة حالته حتى يتم معالجته.
-      </p>
-  <!-- دائرة الأزرار -->
-  <div id="circle-container" style="text-align:center; margin:40px auto;">
-    <div id="circle">
+  <!-- ترحيب المستخدم -->
+  <div class="hero">
+    مرحباً بك في صفحة تقديم الشكاوى
+  </div>
+
+  <div class="container2">
+    <div class="section-title">لماذا نرحب بشكاويك؟</div>
+    <p class="info-text">
+      تهدف هذه المنصة إلى تحسين جودة الخدمات المقدمة للمواطنين...
+    </p>
+
+    <!-- دائرة الأزرار لاختيار نوع المشكلة -->
+    <div id="circle-container" style="text-align:center; margin:40px auto;">
+      <div id="circle">
         <button class="circle-button top" onclick="openModal('الطرق')">مشكلة في الطريق</button>
         <button class="circle-button right" onclick="openModal('الكهرباء')">مشكلة كهرباء</button>
         <button class="circle-button bottom" onclick="openModal('المياه')">مشكلة مياه</button>
         <button class="circle-button left" onclick="openModal('أخرى')">أخرى</button>
-  </div>
-</div>
-
-  <!-- نموذج الشكوى -->
-  <div class="modal" id="complaintModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">✖</button>
-      <h2>نموذج الشكوى</h2>
-
-      <div class="form-group">
-        <label class="form-label">القطاع:</label>
-        <input type="text" id="sectorField" readonly />
       </div>
+    </div>
 
-      <div class="form-group">
-        <label class="form-label">الاسم:</label>
-        <input type="text" id="name" placeholder="الاسم الكامل" />
+    <!-- نافذة منبثقة لنموذج الشكوى -->
+    <div class="modal" id="complaintModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">✖</button>
+        <h2>نموذج الشكوى</h2>
+
+        <!-- حقل القطاع -->
+        <div class="form-group">
+          <label class="form-label">القطاع:</label>
+          <input type="text" id="sectorField" readonly />
+        </div>
+
+        <!-- حقل الاسم -->
+        <div class="form-group">
+          <label class="form-label">الاسم:</label>
+          <input type="text" id="name" placeholder="الاسم الكامل" />
+        </div>
+
+        <!-- حقل الهاتف -->
+        <div class="form-group">
+          <label class="form-label">رقم الهاتف:</label>
+          <input type="text" placeholder="رقم الهاتف" />
+        </div>
+
+        <!-- التاريخ (يُضاف تلقائياً) -->
+        <input type="hidden" id="dateField" />
+
+        <!-- نص الشكوى -->
+        <div class="form-group">
+          <label class="form-label">الشكوى:</label>
+          <textarea id="complaint" rows="4" placeholder="اكتب شكواك هنا..."></textarea>
+        </div>
+
+        <!-- رفع صورة -->
+        <div class="file-input-container">
+          <label for="file-upload" class="file-input-label">📤 إرفاق صورة</label>
+          <input id="file-upload" type="file" accept="image/*" class="file-input" />
+          <div id="file-name-display" class="file-name">لم يتم اختيار أي ملف</div>
+        </div>
+
+        <!-- إدخال الموقع -->
+        <div class="form-group">
+          <label class="form-label">الموقع الأولي:</label>
+          <input type="text" placeholder="الموقع الأولي" />
+        </div>
+
+        <!-- الخريطة التفاعلية -->
+        <div id="map"></div>
+
+        <!-- إحداثيات الموقع -->
+        <input type="hidden" id="latitude" />
+        <input type="hidden" id="longitude" />
+
+        <!-- زر إرسال الشكوى -->
+        <button class="submit" onclick="submitForm(event)">إرسال</button>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label class="form-label">رقم الهاتف:</label>
-        <input type="text" placeholder="رقم الهاتف" />
-      </div>
-
-      <input type="hidden" id="dateField" />
-
-      <div class="form-group">
-        <label class="form-label">الشكوى:</label>
-        <textarea id="complaint" rows="4" placeholder="اكتب شكواك هنا..."></textarea>
-      </div>
-
-      <div class="file-input-container">
-        <label for="file-upload" class="file-input-label">📤 إرفاق صورة</label>
-        <input id="file-upload" type="file" accept="image/*" class="file-input" />
-        <div id="file-name-display" class="file-name">لم يتم اختيار أي ملف</div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">الموقع الأولي:</label>
-        <input type="text" placeholder="الموقع الأولي" />
-      </div>
-
-      <div id="map"></div>
-
-      <input type="hidden" id="latitude" />
-      <input type="hidden" id="longitude" />
-
-      <button class="submit" onclick="submitForm(event)">إرسال</button>
+    <!-- سلايدر لعرض الصور -->
+    <div class="slider">
+      <img src="image/logo.png" alt="Slider Image">
+      <img src="image/logo.png" alt="Slider Image">
+      <img src="image/logo.png" alt="Slider Image">
     </div>
   </div>
 
-  <div class="slider">
-    <img src="image/logo.png" alt="Slider Image">
-    <img src="image/logo.png" alt="Slider Image">
-    <img src="image/logo.png" alt="Slider Image">
-  </div>
-    </div>
+  <!-- زر الرجوع لأعلى الصفحة -->
   <button id="scrollTopBtn">↑</button>
 
+  <!-- الفوتر -->
   <div class="footer">جميع الحقوق محفوظة  &copy; 2025</div>
 
-  <!-- Leaflet Scripts -->
+  <!-- سكربت الخريطة والمودال -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
   <script>
-
-
-const accountIcon = document.getElementById('accountIcon');
+    // إظهار / إخفاء قائمة الحساب عند النقر
+    const accountIcon = document.getElementById('accountIcon');
     const accountDropdown = document.getElementById('accountDropdown');
 
     accountIcon.addEventListener('click', () => {
@@ -160,50 +167,58 @@ const accountIcon = document.getElementById('accountIcon');
       }
     });
 
-
-
+    // تعريف متغيرات الخريطة
     let map, marker;
 
+    // دالة للحصول على اسم اليوم بالعربي
     function getDayName(date) {
       const days = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
       return days[date.getDay()];
     }
 
+    // تعيين التاريخ الحالي في الحقل
     function setCurrentDate() {
       const today = new Date();
       const dayName = getDayName(today);
       const dateString = today.toISOString().split('T')[0];
-      document.getElementById('dateField').value = ${dayName}، ${dateString};
+      document.getElementById('dateField').value = `${dayName}، ${dateString}`;
     }
 
+    // فتح المودال مع تعيين القطاع والتاريخ
     function openModal(sector) {
-      document.getElementById('sectorField').value = قطاع ${sector};
+      document.getElementById('sectorField').value = `قطاع ${sector}`;
       document.getElementById('complaintModal').style.display = 'flex';
       setCurrentDate();
-      setTimeout(() => map.invalidateSize(), 300);
+      setTimeout(() => map.invalidateSize(), 300); // لإصلاح عرض الخريطة داخل المودال
     }
 
+    // إغلاق المودال
     function closeModal() {
       document.getElementById('complaintModal').style.display = 'none';
     }
 
+    // عرض اسم الملف المرفوع
     document.getElementById('file-upload').addEventListener('change', function (e) {
       const fileName = e.target.files[0] ? e.target.files[0].name : 'لم يتم اختيار أي ملف';
       document.getElementById('file-name-display').textContent = fileName;
     });
 
+    // تهيئة خريطة Leaflet
     function initMap() {
       map = L.map('map').setView([31.963158, 35.930359], 13);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
       marker = L.marker(map.getCenter(), { draggable: true }).addTo(map);
       updateHiddenFields(marker.getLatLng());
 
+      // تحديث الإحداثيات عند تحريك المؤشر
       marker.on('dragend', () => updateHiddenFields(marker.getLatLng()));
       map.on('click', (e) => {
         marker.setLatLng(e.latlng);
         updateHiddenFields(e.latlng);
       });
 
+      // تحديد الموقع الحالي تلقائيًا
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition((pos) => {
           const coords = [pos.coords.latitude, pos.coords.longitude];
@@ -213,6 +228,7 @@ const accountIcon = document.getElementById('accountIcon');
         });
       }
 
+      // إضافة محرك بحث للموقع
       L.Control.geocoder({ defaultMarkGeocode: false })
         .on('markgeocode', function (e) {
           const center = e.geocode.center;
@@ -222,11 +238,13 @@ const accountIcon = document.getElementById('accountIcon');
         }).addTo(map);
     }
 
+    // تحديث القيم المخفية للإحداثيات
     function updateHiddenFields(latlng) {
       document.getElementById('latitude').value = latlng.lat;
       document.getElementById('longitude').value = latlng.lng;
     }
 
+    // إرسال الشكوى (اختباري فقط باستخدام alert)
     function submitForm(e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
@@ -235,38 +253,36 @@ const accountIcon = document.getElementById('accountIcon');
       const lat = document.getElementById('latitude').value;
       const lng = document.getElementById('longitude').value;
 
-      alert(تم إرسال الشكوى:\nالاسم: ${name}\nالشكوى: ${complaint}\nالتاريخ: ${date}\nالموقع: ${lat}, ${lng});
+      alert(`تم إرسال الشكوى:\nالاسم: ${name}\nالشكوى: ${complaint}\nالتاريخ: ${date}\nالموقع: ${lat}, ${lng}`);
     }
 
+    // تهيئة الخريطة عند تحميل الصفحة
     window.onload = initMap;
 
+    // تغيير لون الهيدر عند التمرير
+    window.addEventListener("scroll", function () {
+      let header = document.querySelector(".header");
+      if (window.scrollY > 50) {
+        header.style.background = "#555";
+      } else {
+        header.style.background = "linear-gradient(to bottom, #20B2AA, #66CDAA)";
+      }
+    });
 
+    // زر العودة لأعلى الصفحة
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
 
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
 
-    window.addEventListener("scroll", function() {
-        let header = document.querySelector(".header");
-        if (window.scrollY > 50) {
-          header.style.background = "#555"; 
-        } else {
-          header.style.background = "linear-gradient(to bottom, #20B2AA, #66CDAA)"; 
-        }
-      });
-
-      let scrollTopBtn = document.getElementById("scrollTopBtn");
-
-      window.onscroll = function() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-          scrollTopBtn.style.display = "block";
-        } else {
-          scrollTopBtn.style.display = "none";
-        }
-      };
-
-      scrollTopBtn.onclick = function() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      };
-
-
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
   </script>
 </body>
 </html>
