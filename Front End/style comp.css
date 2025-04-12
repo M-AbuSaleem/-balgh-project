@@ -211,7 +211,7 @@ background-color: #178f89;
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 2000;
   top: 0;
   right: 0;
   bottom: 0;
