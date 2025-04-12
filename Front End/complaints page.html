@@ -173,11 +173,11 @@ const accountIcon = document.getElementById('accountIcon');
       const today = new Date();
       const dayName = getDayName(today);
       const dateString = today.toISOString().split('T')[0];
-      document.getElementById('dateField').value = `${dayName}، ${dateString}`;
+      document.getElementById('dateField').value = ${dayName}، ${dateString};
     }
 
     function openModal(sector) {
-      document.getElementById('sectorField').value = `قطاع ${sector}`;
+      document.getElementById('sectorField').value = قطاع ${sector};
       document.getElementById('complaintModal').style.display = 'flex';
       setCurrentDate();
       setTimeout(() => map.invalidateSize(), 300);
@@ -235,7 +235,7 @@ const accountIcon = document.getElementById('accountIcon');
       const lat = document.getElementById('latitude').value;
       const lng = document.getElementById('longitude').value;
 
-      alert(`تم إرسال الشكوى:\nالاسم: ${name}\nالشكوى: ${complaint}\nالتاريخ: ${date}\nالموقع: ${lat}, ${lng}`);
+      alert(تم إرسال الشكوى:\nالاسم: ${name}\nالشكوى: ${complaint}\nالتاريخ: ${date}\nالموقع: ${lat}, ${lng});
     }
 
     window.onload = initMap;
