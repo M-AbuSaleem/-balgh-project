@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap');
 body {
   font-family: 'Cairo', sans-serif;
   margin: 0;
@@ -115,4 +116,285 @@ body {
 .video{
 width:1920px ;
 height:900px;
+}
+.header2 {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.account-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.account-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.account-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 10px); 
+   left: 1PX;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 260px;
+  z-index: 999;
+  padding: 15px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.account-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.arrow-up {
+  position: absolute;
+  top: -10px;
+  right: 250px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid white;
+}
+
+.account-info {
+  text-align: right;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.account-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.account-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: linear-gradient(to bottom, #20B2AA, #66CDAA);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 14px;
+  direction: rtl; 
+
+}
+
+.account-actions button:hover {
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
+  transform: translateX(-2px);
+  color: #20B2AA;
+}
+
+.account-actions i {
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-mode .header,
+.dark-mode .footer {
+  background: linear-gradient(to bottom, #2c3e50, #34495e);
+}
+
+.dark-mode .nav-link,
+.dark-mode .auth-buttons a,
+.dark-mode .circle-button,
+.dark-mode .account-actions button {
+  color: #ffffff;
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .auth-buttons a:hover,
+.dark-mode .circle-button:hover,
+.dark-mode .account-actions button:hover {
+  background-color: #20B2AA;
+  color: #000000;
+}
+
+.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.dark-mode .account-dropdown {
+  background-color: #2a2a2a;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .arrow-up {
+  border-bottom-color: #2a2a2a;
+}
+
+.dark-mode .form-label {
+  color: #ccc;
+}
+.dark-mode .text-account {
+  color: #ffffff;
+}
+
+.dark-mode .account-actions button:hover{  color: #000000;
+}
+
+
+
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  direction: rtl;
+  font-size: 16px;
+  font-weight: bold;
+  user-select: none;
+}
+
+
+.theme-toggle {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-thumb {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 16px;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #20B2AA;
+}
+
+body.dark-mode .toggle-thumb {
+  transform: translateX(-30px);
+}
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ccc;
+  border-radius: 30px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  color: #000;
+}
+
+.theme-toggle-btn .icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #b0b0b0;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background-color: #20B2AA;
+  color: white;
+}
+.mode-switch {
+  width: 120px;
+  height: 35px;
+  top: 5px;
+  left: 140px; 
+  background-color: #ccc;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-circle {
+  width: 60px;
+  height: 30px;
+  background-color: #222;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cairo', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.mode-switch.active .toggle-circle {
+  left: 57.5px;
+  background-color: #f39c12;
+}
+
+.mode-switch .toggle-text {
+  pointer-events: none;
 }
