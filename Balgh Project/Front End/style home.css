@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap');
 body {
     font-family: 'Cairo', sans-serif;
-    background-color: #ffffff; ;
+    background-color: #eef2f7;
     text-align: center;
     padding: 50px;
     margin: 0;
     color: #000000;
-    padding-top: 100px;
-
   }
 
   
@@ -124,14 +122,12 @@ body {
     padding: 20px;
 }
 .video {
-  padding-bottom: 100px;
-    padding-top: 80px;
-    width: 100%;
-    height: auto;
+ padding-top: 100px;
+    width: 1920px;
+    height: 900px;
     object-fit: cover;
     border-radius: 10px;
-     
-   
+
 }
 .content {
     padding: 150px;
@@ -154,7 +150,7 @@ body {
     font-family: 'Verdana', sans-serif;
 font-weight: bold;
 font-size: 38px;
-color: #66CDAA;
+color: #20B2AA;
 }
 
 
@@ -162,7 +158,7 @@ color: #66CDAA;
 
 
 .button-33 {
-  background-color: #66CDAA;
+  background-color: #20B2AA;
   border-radius: 100px;
   color: rgb(255, 255, 255);
   cursor: pointer;
@@ -189,7 +185,10 @@ color: #66CDAA;
 
 
 
-
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
 .container3 {
   display: flex;
   justify-content: center;
@@ -250,6 +249,12 @@ color: white;
   transition: transform 0.3s ease-in-out;
   flex-basis: 30%; 
 }
+
+/* .label2 {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-top: 5px;
+} */
 
 
 
@@ -328,7 +333,6 @@ color: white;
     margin: 5px 0;
     font-size: 14px;
     color: #333;
-    text-align: right;
   }
   
   .account-actions button {
@@ -346,8 +350,6 @@ color: white;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     font-size: 14px;
-    direction: rtl; 
-
   }
   
   .account-actions button:hover {
@@ -359,217 +361,3 @@ color: white;
   .account-actions i {
     font-size: 16px;
   }
-
-
-
-  h2 {
-    font-size: 32px;
-    color: #20B2AA;
-    margin-bottom: 20px;
-
-  }
-  
-
-
-  @media (max-width: 768px) {
-    .container2 {
-      flex-direction: column;
-      text-align: center;
-    }
-    .content {
-      padding: 20px;
-      width: 100%;
-    }
-  }
-
-
-
-
-
-
-
-
-
-  /* الوضع الليلي */
-body.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-}
-
-body.dark-mode .header,
-body.dark-mode .footer,
-body.dark-mode .box,
-body.dark-mode .box2 {
-  background: linear-gradient(to bottom, #2c3e50, #34495e);
-  color: #ffffff;
-}
-
-body.dark-mode .nav-link,
-body.dark-mode .auth-buttons a {
-  color: #ffffff;
-}
-
-body.dark-mode .nav-link:hover,
-body.dark-mode .auth-buttons a:hover {
-  background-color: #20B2AA;
-  color: #000000;
-}
-
-body.dark-mode .account-dropdown {
-  background-color: #2c2c2c;
-  color: #ffffff;
-}
-
-body.dark-mode .account-actions button {
-  background: linear-gradient(to bottom, #34495e, #2c3e50);
-}
-
-body.dark-mode .account-actions button:hover {
-  background: #ffffff;
-  color: #2c3e50;
-}
-
-
-body.dark-mode .text-account {
-  color: #ffffff;
-}
-
-
-body.dark-mode h2 {
-  font-size: 32px;
-  color: #2c3e50;
-  margin-bottom: 20px;
-
-}
-
-
-
-
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  direction: rtl;
-  font-size: 16px;
-  font-weight: bold;
-  user-select: none;
-
-}
-
-
-.theme-toggle {
-  width: 60px;
-  height: 30px;
-  background-color: #ccc;
-  border-radius: 30px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-thumb {
-  width: 26px;
-  height: 26px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  font-size: 16px;
-}
-
-body.dark-mode .theme-toggle {
-  background-color: #20B2AA;
-}
-
-body.dark-mode .toggle-thumb {
-  transform: translateX(-30px);
-}
-.theme-toggle-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #ccc;
-  border-radius: 30px;
-  padding: 6px 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: 'Cairo', sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  color: #000;
-}
-
-.theme-toggle-btn .icon {
-  font-size: 18px;
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle-btn:hover {
-  background-color: #b0b0b0;
-}
-
-body.dark-mode .theme-toggle-btn {
-  background-color: #20B2AA;
-  color: white;
-}
-.mode-switch {
-  width: 120px;
-  height: 35px;
-  top: 5px;
-  left: 140px; 
-  background-color: #ccc;
-  border-radius: 25px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-circle {
-  width: 60px;
-  height: 30px;
-  background-color: #222;
-  color: white;
-  border-radius: 25px;
-  position: absolute;
-  top: 2.5px;
-  left: 2.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cairo', sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  transition: all 0.4s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-.mode-switch.active .toggle-circle {
-  left: 57.5px;
-  background-color: #f39c12;
-}
-
-.mode-switch .toggle-text {
-  pointer-events: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,56 +8,30 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
   <link rel="stylesheet" href="style comp.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
-
-
-
-
-
-
-
-
 </head>
 <body>
 
+
+
+  
   <div class="header">
     <div class="auth-buttons">
       <header class="header2">
         <div class="account-container" id="accountContainer">
-          <img src="image/user-icon.png" alt="صورة الحساب" class="account-icon" id="accountIcon">
+          <img src="image/3.png" alt=" صورة الحساب" class="account-icon" id="accountIcon">
           <div class="account-dropdown" id="accountDropdown">
             <div class="arrow-up"></div>
             <div class="account-info">
-              <p class="text-account"><strong>👤 الاسم:</strong> سامر السبعاوي</p>
-              <p class="text-account"><strong>📧 البريد:</strong> abusaleemm2003@gmail.com</p>
+              <p><strong>👤 الاسم:</strong> سامر  السبعاوي</p>
+              <p><strong>📧 البريد:</strong> abusaleemm2003@gmail.com</p>
             </div>
             <div class="account-actions">
-
-<div class="mode-switch" id="modeSwitch">
-  <div class="toggle-circle">
-    <span class="toggle-text">Dark Mode</span>
-  </div>
-</div>
-
-
-              
-
-              <button  onclick="location.href='index.html'">
-                
+              <button onclick="location.href='index.html'">
                 <i class="fas fa-user-edit"></i> تعديل الحساب
               </button>
               <button onclick="location.href='index.html'">
                 <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
               </button>
-            
-            
-            
-            
-           
-              
-            
-            
-            
-            
             </div>
           </div>
         </div>
@@ -185,7 +159,6 @@
       document.getElementById('dateField').value = `${dayName}، ${dateString}`;
     }
 
-    // فتح المودال مع تعيين القطاع والتاريخ
     function openModal(sector) {
       document.getElementById('sectorField').value = `قطاع ${sector}`;
       document.getElementById('complaintModal').style.display = 'flex';
@@ -260,10 +233,6 @@
       }
     });
 
-
-
-
-
     let scrollTopBtn = document.getElementById("scrollTopBtn");
 
     window.onscroll = function () {
@@ -277,68 +246,6 @@
     scrollTopBtn.onclick = function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
-
-
-
-
-    window.addEventListener("scroll", function () {
-  let header = document.querySelector(".header");
-  let isDarkMode = document.body.classList.contains("dark-mode");
-
-  if (window.scrollY > 50) {
-    header.style.background = "#555"; 
-  } else {
-    if (isDarkMode) {
-      header.style.background = "linear-gradient(to bottom, #2c3e50, #34495e)"; 
-    } else {
-      header.style.background = "linear-gradient(to bottom, #20B2AA, #66CDAA)";
-    }
-  }
-});
-
-
-
-
-
-
-
-
-
-  const modeSwitch = document.getElementById('modeSwitch');
-  const circle = modeSwitch.querySelector('.toggle-circle');
-  const text = circle.querySelector('.toggle-text');
-
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-    modeSwitch.classList.add('active');
-    text.textContent = 'Light Mode';
-  }
-
-  modeSwitch.addEventListener('click', () => {
-    modeSwitch.classList.toggle('active');
-    const isDark = modeSwitch.classList.contains('active');
-    text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-    document.body.classList.toggle('dark-mode', isDark);
-    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-  });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  </script>
 </body>
 </html>
-

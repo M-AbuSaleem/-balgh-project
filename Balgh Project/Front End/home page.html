@@ -14,33 +14,18 @@
 
     <div class="header">
         <div class="auth-buttons">
+            <!-- <a href="index.html" class="signup-btn">تسجيل الخروج</a> -->
 
        <header class="header2">
     <div class="account-container" id="accountContainer">
-      <img src="image/user-icon.png" alt="صورة الحساب" class="account-icon" id="accountIcon">
+      <img src="image/3.png" alt="صورة الحساب" class="account-icon" id="accountIcon">
       <div class="account-dropdown" id="accountDropdown">
         <div class="arrow-up"></div>
         <div class="account-info">
-          <p class="text-account"><strong>👤 الاسم:</strong> سامر السبعاوي</p>
-          <p class="text-account"><strong> abusaleemm2003@gmail.com</strong> :البريد📧</p>
+          <p><strong>👤 الاسم:</strong> سامر السبعاوي</p>
+          <p><strong>📧 البريد:</strong> abusaleemm2003@gmail.com</p>
         </div>
         <div class="account-actions">
-
-          
-
-          <div class="mode-switch" id="modeSwitch">
-            <div class="toggle-circle">
-              <span class="toggle-text">Dark Mode</span>
-            </div>
-          </div>
-
-
-
-
-
-
-
-          
           <button onclick="location.href='index.html'">
             <i class="fas fa-user-edit"></i> تعديل الحساب
           </button>
@@ -77,21 +62,10 @@
 
 
     <div class="container2">
-        <div class="video" >
-            <video id="modeVideo" width="100%"  autoplay loop muted  preload="auto" playsinline> <!-- جديد -->
-
-
-
-                <source src="image/video-light.mp4" type="video/mp4"><!-- جديد -->
-                <source src="image/video-dark.mp4" type="video/mp4"><!-- جديد -->
-
-
-
-
-
-
-
-
+        <div class="video">
+            <video width="100%"  autoplay loop muted>
+                <source src="image/v.mp4"   type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
         <div class="content">
@@ -99,18 +73,12 @@
             <p> يعد الموقع الأول من نوعه الذي يجمع شكاوى المواطنين من مختلف القطاعات، ليكون منصة شاملة تعكس هموم وتحديات الجميع.</p> 
             <p> للاطلاع على كيفيه تقديم الشكاوي اضغط على الزر</p> 
 
-            <a href="complaints page.html" class="button-33">
-              للتبليغ <i class="fas fa-bullhorn"></i>
-            </a>
-            
+<a href="complaints page.html"  class="button-33" role="button">للتبليغ>></a>
+
                 
         </div>
-    </div> 
+    </div>
     
-    <!-- <marquee direction="right" style="background:#66CDAA; color:white; font-weight:bold; padding:10px;">
-      بلّغ هي منصتك الأولى لتقديم الشكاوى ومتابعتها بسهولة وشفافية
-    </marquee> -->
-   
     <div class="container4">
         <div class="box2">
             <div class="label"> من خلال بلّغ، يمكنك متابعة شكاويك ومعرفة آخر المستجدات بشأنها بشكل شفاف ومباشر.</div>
@@ -162,7 +130,6 @@
             <div class="number" id="visitors">0</div>
             <div class="label">زيارات الموقع</div>
         </div>
-        
         <div class="box">
             <div class="icon"><i class="fas fa-exclamation-circle"></i></div>
             <div class="number" id="complaints">0</div>
@@ -177,7 +144,7 @@
 
 
 
-    </div> 
+    </div>
 
 
 
@@ -230,131 +197,33 @@ window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 
+    let currentIndex = 0; 
+const images = document.querySelectorAll('.slider-images img');
+const totalImages = images.length;
 
-
-
-
-
-
-
-
-window.addEventListener("scroll", function () {
-  let header = document.querySelector(".header");
-  let isDarkMode = document.body.classList.contains("dark-mode");
-
-  if (window.scrollY > 50) {
-    header.style.background = "#555"; // اللون أثناء التمرير (ثابت للجميع)
-  } else {
-    if (isDarkMode) {
-      header.style.background = "linear-gradient(to bottom, #2c3e50, #34495e)"; // لون أسود بالوضع الداكن
-    } else {
-      header.style.background = "linear-gradient(to bottom, #20B2AA, #66CDAA)"; // الوضع العادي
-    }
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function animateValue(id, start, end, duration) {
-  let range = end - start;
-  let current = start;
-  let increment = end > start ? 1 : -1;
-  let stepTime = Math.abs(Math.floor(duration / range));
-  let obj = document.getElementById(id);
-  let timer = setInterval(() => {
-    current += increment;
-    obj.textContent = current;
-    if (current == end) {
-      clearInterval(timer);
-    }
-  }, stepTime);
+function showImage(index) {
+const slider = document.querySelector('.slider-images');
+const newTransformValue = -index * 100; 
+slider.style.transform = `translateX(${newTransformValue}%)`;
 }
 
-animateValue("visitors", 0, 3245, 2000);
-animateValue("complaints", 0, 985, 2000);
-animateValue("resolved", 0, 742, 2000);
-
-
-
-
-
-
- 
-
-
-const modeSwitch = document.getElementById('modeSwitch');
-const circle = modeSwitch.querySelector('.toggle-circle');
-const text = circle.querySelector('.toggle-text');
-const video = document.getElementById("modeVideo");
-const source = video.querySelector("source");
-
-// الدالة اللي بتغير المود والفيديو
-function setMode(isDark) {
-  document.body.classList.toggle('dark-mode', isDark);
-  modeSwitch.classList.toggle('active', isDark);
-  text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-
-  const newSrc = isDark ? "image/video-dark.mp4" : "image/video-light.mp4";
-  if (source.getAttribute("src") !== newSrc) {
-    source.setAttribute("src", newSrc);
-    video.load();
-    video.play();
-  }
-
-  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+document.querySelector('.prev').addEventListener('click', function() {
+if (currentIndex === 0) {
+currentIndex = totalImages - 1; 
+} else {
+currentIndex--;
 }
-
-// عند تحميل الصفحة، تأكد من الوضع المخزن
-window.addEventListener("DOMContentLoaded", () => {
-  const savedMode = localStorage.getItem('darkMode') === 'enabled';
-  setMode(savedMode);
+showImage(currentIndex);
 });
 
-// لما يكبس الزر
-modeSwitch.addEventListener('click', () => {
-  const isDark = !document.body.classList.contains('dark-mode');
-  setMode(isDark);
+document.querySelector('.next').addEventListener('click', function() {
+if (currentIndex === totalImages - 1) {
+currentIndex = 0;
+} else {
+currentIndex++;
+}
+showImage(currentIndex);
 });
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 
