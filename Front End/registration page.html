@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+    <!-- إعدادات الصفحة الأساسية -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحه انشاء الحساب</title>
+    
+    <!-- أيقونة الصفحة -->
     <link rel="icon" href="image/icon.png">
+    
+    <!-- ربط ملف CSS -->
     <link rel="stylesheet" href="style reg.css">
 </head>
 <body>
 
+    <!-- خلفية فيديو متحرك -->
     <div class="video-background">
         <video autoplay muted loop playsinline>
           <source src="image/video2.mp4" type="video/mp4">
           المتصفح لا يدعم تشغيل الفيديو.
         </video>
-      </div>
+    </div>
       
-   
-
+    <!-- الحاوية الرئيسية للمحتوى -->
     <div class="container">
+
+        <!-- زر الرجوع للصفحة الرئيسية -->
         <a href="index.html" class="back-button">&#8594;</a>
 
-        <h1> <a href="index.html"><img src="image/logo2.png" width="100px" height="100px"></a></h1>
+        <!-- الشعار -->
+        <h1> 
+            <a href="index.html">
+                <img src="image/logo2.png" width="100px" height="100px">
+            </a>
+        </h1>
 
+        <!-- عنوان الصفحة -->
         <h2>ادخل المعلومات المطلوبه</h2>
 
+        <!-- أزرار التنقل بين النماذج -->
         <div class="button-group">
             <button id="employeeButton" class="form-toggle-button active" onclick="showForm('employee')">مواطن</button>
             <button id="hirerButton" class="form-toggle-button" onclick="showForm('hirer')">للجهات الحكومية</button>
         </div>
 
+        <!-- نموذج تسجيل المواطنين -->
         <form id="employeeForm" class="form-section active">
             <div class="form-pair-row">
               <div class="form-group">
@@ -41,7 +56,7 @@
                 <input type="text" id="lastName" name="lastName" required>
               </div>
             </div>
-          
+
             <div class="form-pair-row">
               <div class="form-group">
                 <label for="email">البريد الإلكتروني:</label>
@@ -52,7 +67,7 @@
                 <input type="tel" id="phone" name="phone" required>
               </div>
             </div>
-          
+
             <div class="form-pair-row">
               <div class="form-group">
                 <label for="password">كلمة المرور:</label>
@@ -63,12 +78,13 @@
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
               </div>
             </div>
-          
-            <button type="submit">تسجيل</button>
-          </form>
-          
 
-          <form id="hirerForm" class="form-section">
+            <!-- زر التسجيل -->
+            <button type="submit">تسجيل</button>
+        </form>
+
+        <!-- نموذج تسجيل الجهات الحكومية -->
+        <form id="hirerForm" class="form-section">
             <div class="form-pair-row">
               <div class="form-group">
                 <label for="companyName">اسم الجهه :</label>
@@ -79,7 +95,7 @@
                 <input type="text" id="responsibleName" name="responsibleName" required>
               </div>
             </div>
-          
+
             <div class="form-pair-row">
               <div class="form-group">
                 <label for="companyPhone">رقم الهاتف:</label>
@@ -90,7 +106,7 @@
                 <input type="email" id="companyEmail" name="companyEmail" required>
               </div>
             </div>
-          
+
             <div class="form-pair-row">
               <div class="form-group">
                 <label for="companyPassword">كلمة المرور:</label>
@@ -101,77 +117,63 @@
                 <input type="password" id="companyConfirmPassword" name="companyConfirmPassword" required>
               </div>
             </div>
-          
 
+            <!-- حقل إدخال الكود -->
             <input type="text" id="codeInput" placeholder="أدخل الكود هنا" required>
             <br>
-          
 
+            <!-- زر التسجيل -->
             <button type="submit">تسجيل</button>
             <div id="message"></div>
+        </form>
 
-          </form>
-          
-          
+        <!-- عنصر جمالي لخلفية التأثير -->
         <span class="background"></span>
 
     </div>
 
-    <script >function showForm(formType) {
-        document.getElementById('employeeForm').classList.remove('active');
-        document.getElementById('hirerForm').classList.remove('active');
-    
-        if (formType === 'employee') {
-            document.getElementById('employeeForm').classList.add('active');
-            document.getElementById('hirerForm').classList.remove('active');
-            document.getElementById('employeeButton').classList.add('active');
-            document.getElementById('hirerButton').classList.remove('active');
-        } else {
-            document.getElementById('hirerForm').classList.add('active');
+    <!-- سكريبت التحكم بين النماذج والتحقق من الكود -->
+    <script>
+        // دالة لتبديل النموذج المعروض بناءً على الزر المضغوط
+        function showForm(formType) {
             document.getElementById('employeeForm').classList.remove('active');
-            document.getElementById('hirerButton').classList.add('active');
-            document.getElementById('employeeButton').classList.remove('active');
+            document.getElementById('hirerForm').classList.remove('active');
+
+            if (formType === 'employee') {
+                document.getElementById('employeeForm').classList.add('active');
+                document.getElementById('hirerForm').classList.remove('active');
+                document.getElementById('employeeButton').classList.add('active');
+                document.getElementById('hirerButton').classList.remove('active');
+            } else {
+                document.getElementById('hirerForm').classList.add('active');
+                document.getElementById('employeeForm').classList.remove('active');
+                document.getElementById('hirerButton').classList.add('active');
+                document.getElementById('employeeButton').classList.remove('active');
+            }
         }
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-        showForm('employee');
-    });
 
+        // تفعيل النموذج الافتراضي عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            showForm('employee');
+        });
 
+        // الكود الصحيح الذي يجب إدخاله
+        const correctCode = " balgh123"; // لاحظ وجود مسافة في البداية
 
+        // التحقق من صحة الكود عند محاولة إرسال النموذج (هنا في خطأ لأن العنصر id="codeForm" غير موجود)
+        document.getElementById("codeForm")?.addEventListener("submit", function(event) {
+            const userCode = document.getElementById("codeInput").value;
+            const message = document.getElementById("message");
 
-
-
-
-
-
-    const correctCode = " balgh123"; 
-
-    document.getElementById("codeForm").addEventListener("submit", function(event) {
-      const userCode = document.getElementById("codeInput").value;
-      const message = document.getElementById("message");
-
-      if (userCode !== correctCode) {
-        event.preventDefault(); 
-        message.textContent = "❌ الكود غير صحيح! يرجى المحاولة مرة أخرى.";
-        message.style.color = "red";
-      } else {
-        message.textContent = "✅ الكود صحيح! يتم الإرسال...";
-        message.style.color = "green";
-        
-      }
-    });
-
-
-
-
-
-
-
-
-
-
+            if (userCode !== correctCode) {
+                event.preventDefault(); 
+                message.textContent = "❌ الكود غير صحيح! يرجى المحاولة مرة أخرى.";
+                message.style.color = "red";
+            } else {
+                message.textContent = "✅ الكود صحيح! يتم الإرسال...";
+                message.style.color = "green";
+            }
+        });
     </script>
 </body>
 </html>

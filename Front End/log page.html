@@ -2,63 +2,71 @@
 <html>
 
 <head>
+    <!-- عنوان الصفحة في التبويب -->
     <title>صفحه تسجيل الدخول</title>
+
+    <!-- أيقونة تظهر في التبويب بجانب العنوان -->
     <link rel="icon" href="image/icon.png">
 
+    <!-- ربط ملف التنسيقات CSS الخارجي -->
     <link rel="stylesheet" href="style log.css">
 </head>
 
 <body>
 
-
-
+    <!-- خلفية فيديو تغطي الشاشة -->
     <div class="video-background">
         <video autoplay muted loop playsinline>
-          <source src="image/video2.mp4" type="video/mp4">
-          المتصفح لا يدعم تشغيل الفيديو.
+            <source src="image/video2.mp4" type="video/mp4">
+            <!-- رسالة تظهر إذا المتصفح لا يدعم الفيديو -->
+            المتصفح لا يدعم تشغيل الفيديو.
         </video>
-      </div>
-      
-   
+    </div>
 
-
-
-
-
+    <!-- الحاوية الرئيسية لمحتوى تسجيل الدخول -->
     <div class="main">
 
+        <!-- زر الرجوع للصفحة الرئيسية -->
         <a href="index.html" class="back-button">&#8594;</a>
 
-        <h1> <a href="index.html"><img src="image/logo2.png" width="100px" height="100px"></a></h1>
-        <h3 >صفحة التسجيل</h3>
+        <!-- شعار الموقع مع رابط للصفحة الرئيسية -->
+        <h1>
+            <a href="index.html"><img src="image/logo2.png" width="100px" height="100px"></a>
+        </h1>
 
+        <!-- عنوان يوضح أن هذه صفحة تسجيل الدخول -->
+        <h3>صفحة التسجيل</h3> <!-- يفضل تعديله إلى "تسجيل الدخول" للتوضيح -->
+
+        <!-- نموذج تسجيل الدخول -->
         <form action="">
+            <!-- حقل البريد الإلكتروني -->
             <label for="first">
-               : البريد الإلكتروني
+                : البريد الإلكتروني
             </label>
-            <input type="text" id="first" name="first" 
+            <input type="text" id="first" name="first"
                 placeholder="ادخل  البريد الإلكتروني " required>
 
+            <!-- حقل كلمة المرور -->
             <label for="password">
-                 :كلمه المرور 
+                :كلمه المرور 
             </label>
-            <input type="password" id="password" name="password" 
+            <input type="password" id="password" name="password"
                 placeholder="ادخل كلمه المرور" required>
 
+            <!-- زر إرسال النموذج -->
             <div class="wrap">
                 <button type="submit">
                     تسجيل
                 </button>
             </div>
         </form>
-        
+
+        <!-- رابط للانتقال إلى صفحة إنشاء حساب جديد -->
         <p>الم تسجل بعد?<a href="registration page.html" style="text-decoration: none;">انشاء حساب </a></p>
 
-
-
-
-
     </div>
+
+    <!-- عنصر يستخدم لخلفية إضافية أو تأثير بصري -->
     <span class="background"></span>
 
 </body>

@@ -1,3 +1,4 @@
+/* تنسيق الجسم العام */
 body {
     display: flex;
     align-items: center;
@@ -7,14 +8,13 @@ body {
     min-height: 100vh;
     width: 100vw;
     height: 100vh;
-    /* background-image: url('image/background6.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
-}
-
-
-.main {
+  }
+  
+  /* تنسيق الحاوية الرئيسية */
+  .main {
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(226, 12, 12, 0.1);
@@ -22,28 +22,24 @@ body {
     width: 450px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    transform: scale(1);
-}
-
-.main:hover {
+  }
+  
+  .main:hover {
     transform: scale(1.05);
-}
-
-h1 {
+  }
+  
+  /* تنسيق العناوين */
+  h1, h3 {
     color: #20B2AA;
+  }
+  
+  h1 {
     font-size: 32px;
     font-weight: 600;
-    margin-bottom: 20px;
-    
-
-}
-
-
-h3{
-    color: #20B2AA;
-    
-}
-label {
+  }
+  
+  /* تنسيق الحقول */
+  label {
     display: block;
     width: 100%;
     margin-top: 15px;
@@ -51,9 +47,9 @@ label {
     text-align: right;
     color: #333;
     font-weight: 500;
-}
-
-input {
+  }
+  
+  input {
     display: block;
     width: 100%;
     padding: 12px;
@@ -63,14 +59,15 @@ input {
     border-radius: 8px;
     font-size: 16px;
     transition: border 0.3s ease;
-}
-
-input:focus {
+  }
+  
+  input:focus {
     border-color: #66CDAA;
     outline: none;
-}
-
-button {
+  }
+  
+  /* تنسيق الأزرار */
+  button {
     padding: 15px;
     border-radius: 12px;
     margin-top: 20px;
@@ -82,11 +79,14 @@ button {
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s ease;
-}
-button:hover {
+  }
+  
+  button:hover {
     background-color: #20B2AA;
-}
-.back-button {
+  }
+  
+  /* تنسيق زر العودة */
+  .back-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -100,11 +100,12 @@ button:hover {
     border-radius: 50%;
     transition: background 0.3s;
   }
+  
   .back-button:hover {
     background: #66CDAA;
   }
   
-  
+  /* تنسيق خلفية الفيديو */
   .video-background {
     position: fixed;
     top: 0;
@@ -118,8 +119,6 @@ button:hover {
   .video-background video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* يغطي كامل الشاشة */
+    object-fit: cover;
   }
-
-
   
