@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* تنسيقات الجسم العام للصفحة */
+/* تنسيقات  للصفحة */
 body {
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@ body {
   text-align: center;
 }
 
-/* الحاوية الرئيسية للنموذج */
+/*  الرئيسية للنموذج */
 .container {
   background: #ffffff;
   border-radius: 20px;
@@ -37,7 +37,7 @@ body {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* تأثير عند مرور الماوس على الحاوية */
+/* تأثير عند مرور الماوس   */
 .container:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -171,7 +171,7 @@ button:hover {
   background: #66CDAA;
 }
 
-/* تغليف خلفية الفيديو */
+/*   الفيديو */
 .video-background {
   position: fixed;
   top: 0;

@@ -1,4 +1,5 @@
-/* تنسيق الجسم العام */
+/* تنسيقات  للصفحة */
+
 body {
     display: flex;
     align-items: center;
@@ -13,7 +14,7 @@ body {
     margin: 0;
   }
   
-  /* تنسيق الحاوية الرئيسية */
+  /* تنسيق  الرئيسية */
   .main {
     background: #ffffff;
     border-radius: 20px;
