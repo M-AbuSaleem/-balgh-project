@@ -221,5 +221,5 @@ button:hover {
   font-weight: bold;
 }
 input::placeholder {
-  text-align: center; /* يضبط محاذاة الـ placeholder */
+  text-align: center; 
 }
