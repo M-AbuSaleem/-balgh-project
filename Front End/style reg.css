@@ -31,7 +31,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
-  width: 500px;
+  width: 550px;
   max-width: 100%;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -219,4 +219,7 @@ button:hover {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
+}
+input::placeholder {
+  text-align: center; /* يضبط محاذاة الـ placeholder */
 }
