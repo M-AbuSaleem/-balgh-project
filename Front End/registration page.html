@@ -1,140 +1,142 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <!-- إعدادات الصفحة الأساسية -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحه انشاء الحساب</title>
-    
-    <!-- أيقونة الصفحة -->
     <link rel="icon" href="image/icon.png">
-    
-    <!-- ربط ملف CSS -->
     <link rel="stylesheet" href="style reg.css">
 </head>
 <body>
 
-    <!-- خلفية فيديو متحرك -->
+    <!-- خلفية الفيديو -->
     <div class="video-background">
         <video autoplay muted loop playsinline>
-          <source src="image/video2.mp4" type="video/mp4">
-          المتصفح لا يدعم تشغيل الفيديو.
+            <source src="image/video2.mp4" type="video/mp4">
+            المتصفح لا يدعم تشغيل الفيديو.
         </video>
     </div>
-      
-    <!-- الحاوية الرئيسية للمحتوى -->
+
+    <!-- الحاوية الأساسية -->
     <div class="container">
 
-        <!-- زر الرجوع للصفحة الرئيسية -->
         <a href="index.html" class="back-button">&#8594;</a>
 
-        <!-- الشعار -->
-        <h1> 
+        <h1>
             <a href="index.html">
                 <img src="image/logo2.png" width="100px" height="100px">
             </a>
         </h1>
 
-        <!-- عنوان الصفحة -->
         <h2>ادخل المعلومات المطلوبه</h2>
 
-        <!-- أزرار التنقل بين النماذج -->
+        <!-- أزرار التبديل بين النماذج -->
         <div class="button-group">
             <button id="employeeButton" class="form-toggle-button active" onclick="showForm('employee')">مواطن</button>
             <button id="hirerButton" class="form-toggle-button" onclick="showForm('hirer')">للجهات الحكومية</button>
         </div>
 
-        <!-- نموذج تسجيل المواطنين -->
+        <!-- نموذج المواطن -->
         <form id="employeeForm" class="form-section active">
             <div class="form-pair-row">
-              <div class="form-group">
-                <label for="firstName">الاسم الأول:</label>
-                <input type="text" id="firstName" name="firstName" required>
-              </div>
-              <div class="form-group">
-                <label for="lastName">الاسم الأخير:</label>
-                <input type="text" id="lastName" name="lastName" required>
-              </div>
+                <div class="form-group">
+                    <label for="firstName">الاسم الأول:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">الاسم الأخير:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
             </div>
 
             <div class="form-pair-row">
-              <div class="form-group">
-                <label for="email">البريد الإلكتروني:</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">رقم الهاتف:</label>
-                <input type="tel" id="phone" name="phone" required>
-              </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
             </div>
 
             <div class="form-pair-row">
-              <div class="form-group">
-                <label for="password">كلمة المرور:</label>
-                <input type="password" id="password" name="password" required>
-              </div>
-              <div class="form-group">
-                <label for="confirmPassword">تأكيد كلمة المرور:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-              </div>
+                <div class="form-group">
+                    <label for="password">كلمة المرور:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">تأكيد كلمة المرور:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
             </div>
 
-            <!-- زر التسجيل -->
             <button type="submit">تسجيل</button>
         </form>
 
-        <!-- نموذج تسجيل الجهات الحكومية -->
+        <!-- نموذج الجهات الحكومية -->
         <form id="hirerForm" class="form-section">
             <div class="form-pair-row">
-              <div class="form-group">
-                <label for="companyName">اسم الجهه :</label>
-                <input type="text" id="companyName" name="companyName" required>
-              </div>
-              <div class="form-group">
-                <label for="responsiblePhone">اسم الشخص المسوول :</label>
-                <input type="text" id="responsibleName" name="responsibleName" required>
-              </div>
+                <div class="form-group">
+                    <label for="companyName">اسم الجهه :</label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="responsiblePhone">اسم الشخص المسوول :</label>
+                    <input type="text" id="responsibleName" name="responsibleName" required>
+                </div>
             </div>
 
             <div class="form-pair-row">
-              <div class="form-group">
-                <label for="companyPhone">رقم الهاتف:</label>
-                <input type="text" id="companyPhone" name="companyPhone" required>
-              </div>
-              <div class="form-group">
-                <label for="companyEmail">البريد الإلكتروني:</label>
-                <input type="email" id="companyEmail" name="companyEmail" required>
-              </div>
+                <div class="form-group">
+                    <label for="companyPhone">رقم الهاتف:</label>
+                    <input type="text" id="companyPhone" name="companyPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyEmail">البريد الإلكتروني:</label>
+                    <input type="email" id="companyEmail" name="companyEmail" required>
+                </div>
             </div>
 
             <div class="form-pair-row">
-              <div class="form-group">
-                <label for="companyPassword">كلمة المرور:</label>
-                <input type="password" id="companyPassword" name="companyPassword" required>
-              </div>
-              <div class="form-group">
-                <label for="companyConfirmPassword">تأكيد كلمة المرور:</label>
-                <input type="password" id="companyConfirmPassword" name="companyConfirmPassword" required>
-              </div>
+                <div class="form-group">
+                    <label for="companyPassword">كلمة المرور:</label>
+                    <input type="password" id="companyPassword" name="companyPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyConfirmPassword">تأكيد كلمة المرور:</label>
+                    <input type="password" id="companyConfirmPassword" name="companyConfirmPassword" required>
+                </div>
             </div>
 
-            <!-- حقل إدخال الكود -->
             <input type="text" id="codeInput" placeholder="أدخل الكود هنا" required>
             <br>
 
-            <!-- زر التسجيل -->
             <button type="submit">تسجيل</button>
             <div id="message"></div>
         </form>
 
-        <!-- عنصر جمالي لخلفية التأثير -->
+        <!-- اللودر -->
+        <div id="loader">
+            <div class="loader-container">
+                <div class="spinner"></div>
+                <p>جاري التحميل...</p>
+            </div>
+        </div>
+
         <span class="background"></span>
 
     </div>
 
-    <!-- سكريبت التحكم بين النماذج والتحقق من الكود -->
+    <!-- سكريبتات -->
     <script>
-        // دالة لتبديل النموذج المعروض بناءً على الزر المضغوط
+        // إخفاء اللودر بعد التحميل
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.classList.add('hidden');
+        });
+
+        // تبديل بين النماذج
         function showForm(formType) {
             document.getElementById('employeeForm').classList.remove('active');
             document.getElementById('hirerForm').classList.remove('active');
@@ -152,21 +154,19 @@
             }
         }
 
-        // تفعيل النموذج الافتراضي عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', () => {
             showForm('employee');
         });
 
-        // الكود الصحيح الذي يجب إدخاله
-        const correctCode = " balgh123"; // لاحظ وجود مسافة في البداية
+        // التحقق من الكود
+        const correctCode = " balgh123";
 
-        // التحقق من صحة الكود عند محاولة إرسال النموذج (هنا في خطأ لأن العنصر id="codeForm" غير موجود)
-        document.getElementById("codeForm")?.addEventListener("submit", function(event) {
+        document.getElementById("codeForm").addEventListener("submit", function (event) {
             const userCode = document.getElementById("codeInput").value;
             const message = document.getElementById("message");
 
             if (userCode !== correctCode) {
-                event.preventDefault(); 
+                event.preventDefault();
                 message.textContent = "❌ الكود غير صحيح! يرجى المحاولة مرة أخرى.";
                 message.style.color = "red";
             } else {
@@ -174,6 +174,19 @@
                 message.style.color = "green";
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+        
     </script>
+
 </body>
 </html>

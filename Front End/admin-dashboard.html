@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>صفحه الشكاوي</title>
+  <link rel="icon" href="image/icon.png">
+  
+  <!-- ملف التنسيقات الخارجي -->
+  <link rel="stylesheet" href="style admin.css">
+  <!-- خط Cairo للغة العربية -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+</head>
+<body>
+ 
+
+  <!-- رأس الصفحة ويحتوي على قائمة الحساب -->
+  <div class="header">
+    <div class="auth-buttons">
+      <!-- قائمة الحساب المنسدلة -->
+      <header class="header2">
+        <div class="account-container" id="accountContainer">
+          <img src="image/user-icon.png" alt="صورة الحساب" class="account-icon" id="accountIcon">
+          <div class="account-dropdown" id="accountDropdown">
+            <div class="arrow-up"></div>
+            <div class="account-info">
+              <p class="text-account"><strong>👤 الاسم:</strong> سامر السبعاوي</p>
+              <p class="text-account"><strong>📧 البريد:</strong> abusaleemm2003@gmail.com</p>
+            </div>
+            <div class="account-actions">
+              
+              <!-- وضع تغيير الوضع الليلي هنا -->
+              <div class="mode-switch" id="modeSwitch">
+                <div class="toggle-circle">
+                  <span class="toggle-text">Dark Mode</span>
+                </div>
+              </div>
+
+              <!-- أزرار تعديل الحساب وتسجيل الخروج -->
+              <button id="myButton"><i class="fas fa-user-edit"></i> تعديل الحساب</button>
+              <button onclick="location.href='index.html'"> <i class="fas fa-sign-out-alt"></i> تسجيل الخروج </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- شريط التنقل الرئيسي -->
+    <nav class="nav">
+      <div class="logo-container">
+        <a href="#" title="balgh">
+          <img src="image/logo.png" class="logo-d" alt="Logo">
+        </a>
+      </div>    
+    </nav>
+  </div>
+
+  <!-- رأس لوحة التحكم للمشرف -->
+  <div class="admin-header">
+    <p><h1>لوحة تحكم المشرف//</h1></p>
+    <div class="half-line"></div>
+  </div>
+
+  <!-- الشريط الجانبي -->
+  <div class="sidebar">
+    <h3>لوحة التحكم</h3>
+    <a href="#" onclick="showSection('complaints')">📋 الشكاوى</a>
+    <a href="#" onclick="showSection('procedure')">📝 الإجراء</a>
+    <a href="#" onclick="showSection('stats')">📊 الإحصائيات</a>
+    <a href="#" id="setting-link">👥 الاعدادات</a>
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <div class="main">
+    
+    <!-- قسم الشكاوى -->
+    <div class="section active" id="complaints">
+
+
+
+      <div class="filter-section" style="margin: 20px;">
+          <input type="date" id="filter-date" class="filter-input" />
+          <input type="text" id="filter-location" class="filter-input" placeholder="(اختياري) الموقع" />
+          <input type="text" id="filter-id" class="filter-input" placeholder="رقم الشكوى" />
+          <select id="filter-status" class="filter-input">
+            <option value="">جميع الحالات</option>
+            <option value="جديدة">جديدة</option>
+            <option value="قيد المعالجة">قيد المعالجة</option>
+            <option value="مرفوضة">مرفوضة</option>
+          </select>
+          <button onclick="applyFilters()">بحث</button>
+
+
+
+
+ <section class="complaints-table">
+          <table>
+            <thead>
+              <tr>
+                <th>رقم الشكوى</th>
+                <th>اسم مقدم الشكوى</th>
+                <th>الموقع</th>
+                <th>الحالة</th>
+                <th>الإجراءات</th>
+                <th>التاريخ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+
+                <td class="Date">2025-04-24</td>
+              </tr>
+              <tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr><tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr><tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr><tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr><tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr><tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr><tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr><tr>
+                <td>#001</td>
+                <td>أحمد محمد</td>
+                <td>عمان</td>
+                <td >جديدة</td>
+                <td><button class="btn-view" onclick="openModal()">تعديل</button></td>
+                <td class="Date">2025-04-24</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <div id="statusModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>تغيير حالة الشكوى</h2>
+            <label for="status">اختر الحالة:</label>
+            <select id="statusSelect">
+              <option value="قيد المعالجة">قيد المعالجة</option>
+              <option value="تم الحل">تم الحل</option>
+             
+            </select>
+            <button onclick="updateStatus()">تحديث الحالة</button>
+          </div>
+        </div>
+      
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <!-- قسم الإحصائيات -->
+      <div class="section" id="stats">
+
+
+
+
+
+
+
+
+
+          <!-- قسم الإحصائيات -->
+          <section class="stats">
+              <div class="stat-box">
+                  <h3>عدد الشكاوى</h3>
+                  <p>150</p>
+              </div>
+              <div class="stat-box">
+                  <h3>عدد الشكاوى المعالجة</h3>
+                  <p>120</p>
+              </div>
+              <div class="stat-box">
+                  <h3>عدد الشكاوى المعلقة</h3>
+                  <p>30</p>
+              </div>
+          </section>
+  
+          <!-- قسم الرسم البياني -->
+          <section class="charts">
+              <div class="chart-box">
+                  <h3>توزيع الشكاوى حسب الحالة</h3>
+                  <canvas id="statusChart" width="200" height="200"></canvas>
+              </div>
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    <div class="section" id="setting">
+
+    </div>
+
+  </div>
+
+  <div id="loader">
+    <div class="loader-container">
+      <div class="spinner"></div>
+      <p>جاري التحميل...</p>
+    </div>
+  </div>
+
+  <button id="scrollTopBtn">↑</button>
+
+  <div class="footer">جميع الحقوق محفوظة  &copy; 2025</div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script>
+    // ===== الحساب المنسدل =====
+    const accountIcon = document.getElementById('accountIcon');
+    const accountDropdown = document.getElementById('accountDropdown');
+  
+    accountIcon.addEventListener('click', () => {
+      accountDropdown.classList.toggle('show');
+    });
+  
+    document.addEventListener('click', (e) => {
+      if (!accountIcon.contains(e.target) && !accountDropdown.contains(e.target)) {
+        accountDropdown.classList.remove('show');
+      }
+    });
+  
+    // ===== تغيير خلفية الهيدر عند التمرير =====
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector(".header");
+      const isDarkMode = document.body.classList.contains("dark-mode");
+  
+      if (window.scrollY > 50) {
+        header.style.background = "#555";
+      } else {
+        header.style.background = isDarkMode
+          ? "linear-gradient(to bottom, #2c3e50, #34495e)"
+          : "linear-gradient(to bottom, #20B2AA, #66CDAA)";
+      }
+    });
+  
+    // ===== زر الرجوع إلى الأعلى =====
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+  
+    window.onscroll = function () {
+      scrollTopBtn.style.display =
+        document.body.scrollTop > 200 || document.documentElement.scrollTop > 200
+          ? "block"
+          : "none";
+    };
+  
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  
+    // ===== تبديل الوضع الليلي والنهاري =====
+    const modeSwitch = document.getElementById('modeSwitch');
+    const circle = modeSwitch.querySelector('.toggle-circle');
+    const text = circle.querySelector('.toggle-text');
+  
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      modeSwitch.classList.add('active');
+      text.textContent = 'Light Mode';
+    }
+  
+    modeSwitch.addEventListener('click', () => {
+      modeSwitch.classList.toggle('active');
+      const isDark = modeSwitch.classList.contains('active');
+      text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      document.body.classList.toggle('dark-mode', isDark);
+      localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    });
+  
+    // ===== إظهار الأقسام =====
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'flex';
+    }
+  
+    window.onload = function () {
+      showSection('complaints');
+    };
+  
+    // ===== التبديل بين الروابط في الشريط الجانبي =====
+    const links = document.querySelectorAll('.sidebar a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  
+    // ===== تنبيهات للصفحات غير المكتملة =====
+    document.getElementById("myButton").addEventListener("click", () => {
+      alert("الصفحه قيد التطوير");
+    });
+  
+    document.getElementById("setting-link").addEventListener("click", function (e) {
+      e.preventDefault();
+      alert("الصفحة قيد التطوير");
+    });
+  
+    // ===== إخفاء شاشة التحميل بعد التحميل =====
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.classList.add('hidden');
+    });
+  
+    // ===== رسم مخطط الحالات باستخدام Chart.js =====
+    const statusCtx = document.getElementById('statusChart').getContext('2d');
+    const statusChart = new Chart(statusCtx, {
+      type: 'pie',
+      data: {
+        labels: ['تم الحل', 'قيد المعالجة', 'جديدة'],
+        datasets: [{
+          label: 'الحالة',
+          data: [70, 50, 30],
+          backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  
+    // ===== فلترة الشكاوى =====
+    function applyFilters() {
+      const date = document.getElementById("filter-date").value;
+      const location = document.getElementById("filter-location").value.toLowerCase();
+      const status = document.getElementById("filter-status").value;
+  
+      document.querySelectorAll(".complaint-row").forEach(row => {
+        const rowDate = row.dataset.date;
+        const rowLocation = row.dataset.location.toLowerCase();
+        const rowStatus = row.dataset.status;
+  
+        const matchDate = !date || rowDate === date;
+        const matchLocation = !location || rowLocation.includes(location);
+        const matchStatus = !status || rowStatus === status;
+  
+        row.style.display = matchDate && matchLocation && matchStatus ? "" : "none";
+      });
+    }
+  
+    // ===== عرض وتحديث الحالة من خلال Modal =====
+    let currentRow = null;
+  
+    function showModal(row) {
+      currentRow = row;
+      const currentStatus = row.cells[3].innerText;
+      document.getElementById('statusSelect').value = currentStatus;
+      document.getElementById('statusModal').style.display = "block";
+    }
+  
+    function updateStatus() {
+      const newStatus = document.getElementById('statusSelect').value;
+      currentRow.cells[3].innerText = newStatus;
+      closeModal();
+    }
+  
+    function closeModal() {
+      document.getElementById('statusModal').style.display = "none";
+    }
+  
+    document.querySelectorAll('.btn-view').forEach(button => {
+      button.addEventListener('click', function () {
+        const row = this.closest('tr');
+        showModal(row);
+      });
+    });
+  
+    // ===== إضافة شكوى جديدة إلى الجدول =====
+    function addComplaint(name, location, status, date) {
+      const table = document.querySelector(".complaints-table tbody");
+      const row = document.createElement("tr");
+  
+      row.innerHTML = `
+        <td></td>
+        <td>${name}</td>
+        <td>${location}</td>
+        <td>${status}</td>
+        <td><button class="btn-view" onclick="showModal(this.closest('tr'))">عرض</button></td>
+        <td class="Date">${date}</td>
+      `;
+  
+      table.appendChild(row);
+      updateComplaintNumbers();
+    }
+  
+    // ===== تحديث أرقام الشكاوى تلقائيًا =====
+    function updateComplaintNumbers() {
+      const rows = document.querySelectorAll(".complaints-table tbody tr");
+      rows.forEach((row, index) => {
+        const numberCell = row.querySelector("td:first-child");
+        numberCell.textContent = `#${(index + 1).toString().padStart(3, '0')}`;
+      });
+    }
+  
+    // أول تحديث عند تحميل الصفحة
+    updateComplaintNumbers();
+  </script>
+  
+
+</body>
+</html>
